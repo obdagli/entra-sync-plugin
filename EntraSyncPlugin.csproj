@@ -7,26 +7,38 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
     <Deterministic>true</Deterministic>
+    <XrmToolboxPath>$(UserProfile)\Downloads\New folder\XrmToolbox</XrmToolboxPath>
   </PropertyGroup>
 
   <ItemGroup>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.ComponentModel.Composition" />
+  </ItemGroup>
+
+  <ItemGroup Condition="Exists('$(XrmToolboxPath)\\XrmToolBox.Extensibility.dll')">
     <Reference Include="Microsoft.Xrm.Sdk">
-      <HintPath>C:\Users\omdal\Downloads\New folder\XrmToolbox\Microsoft.Xrm.Sdk.dll</HintPath>
+      <HintPath>$(XrmToolboxPath)\Microsoft.Xrm.Sdk.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Crm.Sdk.Proxy">
-      <HintPath>C:\Users\omdal\Downloads\New folder\XrmToolbox\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+      <HintPath>$(XrmToolboxPath)\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xrm.Tooling.Connector">
-      <HintPath>C:\Users\omdal\Downloads\New folder\XrmToolbox\Microsoft.Xrm.Tooling.Connector.dll</HintPath>
+      <HintPath>$(XrmToolboxPath)\Microsoft.Xrm.Tooling.Connector.dll</HintPath>
     </Reference>
     <Reference Include="XrmToolBox.Extensibility">
-      <HintPath>C:\Users\omdal\Downloads\New folder\XrmToolbox\XrmToolBox.Extensibility.dll</HintPath>
+      <HintPath>$(XrmToolboxPath)\XrmToolBox.Extensibility.dll</HintPath>
     </Reference>
     <Reference Include="McTools.Xrm.Connection">
-      <HintPath>C:\Users\omdal\Downloads\New folder\XrmToolbox\McTools.Xrm.Connection.dll</HintPath>
+      <HintPath>$(XrmToolboxPath)\McTools.Xrm.Connection.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup Condition="!Exists('$(XrmToolboxPath)\\XrmToolBox.Extensibility.dll')">
+    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.49" />
+    <PackageReference Include="Microsoft.CrmSdk.XrmTooling.CoreAssembly" Version="9.1.1.32" />
+    <ProjectReference Include="vendor\\XrmToolBox.Extensibility\\XrmToolBox.Extensibility.csproj" />
+    <ProjectReference Include="vendor\\XrmToolBox.Extensibility.Interfaces\\XrmToolBox.Extensibility.Interfaces.csproj" />
+    <ProjectReference Include="vendor\\McTools.Xrm.Connection\\McTools.Xrm.Connection.csproj" />
   </ItemGroup>
 
   <ItemGroup>

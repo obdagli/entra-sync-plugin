@@ -53,6 +53,14 @@ If you use a portable XrmToolBox, copy the DLL to its `Plugins` folder and resta
 dotnet build EntraSyncPlugin.csproj -c Debug
 ```
 
+If your XrmToolBox install lives elsewhere, override the path:
+
+```powershell
+dotnet build EntraSyncPlugin.csproj -c Debug -p:XrmToolboxPath="C:\Path\To\XrmToolbox"
+```
+
+If the XrmToolBox assemblies are not found, the project falls back to local `vendor/` stubs and CRM SDK NuGet packages for compile-time only.
+
 Output:
 
 ```

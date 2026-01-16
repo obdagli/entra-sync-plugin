@@ -4,12 +4,13 @@ using McTools.Xrm.Connection;
 
 namespace XrmToolBox.Extensibility
 {
-    public class PluginControlBase : UserControl
+    public class PluginControlBase : UserControl, XrmToolBox.Extensibility.Interfaces.IXrmToolBoxPluginControl
     {
         public IOrganizationService Service { get; set; }
         public ConnectionDetail ConnectionDetail { get; set; }
 
-        // Minimal no-op shim so plugin code can call ExecuteMethod
+        // Minimal no-op shims so plugin code can compile
         public void ExecuteMethod(object info) { }
+        public void WorkAsync(WorkAsyncInfo info) { }
     }
 }

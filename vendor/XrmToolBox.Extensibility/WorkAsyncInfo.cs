@@ -14,6 +14,7 @@ namespace XrmToolBox.Extensibility
         public string Message { get; set; }
         public Action<BackgroundWorker, DoWorkEventArgs> Work { get; set; }
         public Action<WorkAsyncCallbackArgs> PostWorkCallBack { get; set; }
+        public Action<ProgressChangedEventArgs> ProgressChanged { get; set; }
         public object Result { get; set; }
     }
 }
