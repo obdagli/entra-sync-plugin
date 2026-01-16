@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>XrmToolBox.Extensibility</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <!-- Files present for offline build guidance only; exclude from automatic compile to avoid duplicate TF attributes -->
+    <Compile Include="PluginControlBase.cs" Visible="false" />
+    <Compile Include="WorkAsyncInfo.cs" Visible="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\McTools.Xrm.Connection\McTools.Xrm.Connection.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.49" />
+    <PackageReference Include="Microsoft.CrmSdk.XrmTooling.CoreAssembly" Version="9.1.1.32" />
+  </ItemGroup>
+</Project>

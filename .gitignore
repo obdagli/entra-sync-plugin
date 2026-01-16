@@ -1,0 +1,5 @@
+bin/
+obj/
+**/bin/
+**/obj/
+NEXT_AGENT_INSTRUCTIONS.md

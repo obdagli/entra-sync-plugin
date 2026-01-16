@@ -1,20 +1,36 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <!-- Vendor project references intentionally removed: use NuGet packages when available -->
 
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XrmToolBox" Version="1.2023.10.67" />
-    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.49" />
-    <PackageReference Include="Microsoft.CrmSdk.XrmTooling.CoreAssembly" Version="9.1.1.32" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="Microsoft.Xrm.Sdk">
+      <HintPath>C:\Users\omdal\Downloads\New folder\XrmToolbox\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy">
+      <HintPath>C:\Users\omdal\Downloads\New folder\XrmToolbox\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.Connector">
+      <HintPath>C:\Users\omdal\Downloads\New folder\XrmToolbox\Microsoft.Xrm.Tooling.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="XrmToolBox.Extensibility">
+      <HintPath>C:\Users\omdal\Downloads\New folder\XrmToolbox\XrmToolBox.Extensibility.dll</HintPath>
+    </Reference>
+    <Reference Include="McTools.Xrm.Connection">
+      <HintPath>C:\Users\omdal\Downloads\New folder\XrmToolbox\McTools.Xrm.Connection.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="System.Windows.Forms" />
+    <Compile Remove="vendor\**\*.cs" />
   </ItemGroup>
 
 </Project>
