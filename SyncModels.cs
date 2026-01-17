@@ -25,4 +25,12 @@ namespace EntraSyncPlugin
         public string TeamType { get; set; }
         public string BusinessUnit { get; set; }
     }
+
+    public class GraphGroupMember
+    {
+        public string Id { get; set; }
+        public string DisplayName { get; set; }
+        public string UserPrincipalName { get; set; }
+        public string Mail { get; set; }
+    }
 }
